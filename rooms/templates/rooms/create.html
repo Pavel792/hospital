@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление палаты{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Добавление палаты</h1>
+        {# Добавление палаты в базу данных #}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.num }}<br><br>
+            {{ form.name1 }}<br>
+            {{ form.about1 }}<br>
+            {{ form.temp1 }}<br>
+            {{ form.date1 }}<br><br>
+            {{ form.name2 }}<br>
+            {{ form.about2 }}<br>
+            {{ form.temp2 }}<br>
+            {{ form.date2 }}<br><br>
+            {{ form.name3 }}<br>
+            {{ form.about3 }}<br>
+            {{ form.temp3 }}<br>
+            {{ form.date3 }}<br><br>
+            {{ form.name4 }}<br>
+            {{ form.about4 }}<br>
+            {{ form.temp4 }}<br>
+            {{ form.date4 }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Сохранить</button>
+        </form>
+    </div>
+{% endblock %}

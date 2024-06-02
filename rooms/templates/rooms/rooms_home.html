@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Палаты{% endblock %}
+    </style>
+{% block content %}
+    <div class="features">
+        <h1>Палаты</h1>
+        <a href="{% url 'add' %}" class="btn btn-info">Добавить палату</a>
+        {% if rooms %}
+            {% for el in rooms %}
+                <div class="alert alert-info">
+                    <h3>{{ el.num }}</h3>
+                    <p>{{ el.name1 }}</p>
+                    <p>{{ el.name2 }}</p>
+                    <p>{{ el.name3 }}</p>
+                    <p>{{ el.name4 }}</p>
+                    <a href="{% url 'rooms-detail' el.id %}" class="btn btn-info">Подробнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Палат нет</p>
+        {% endif %}
+    </div>
+{% endblock %}

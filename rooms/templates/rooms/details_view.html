@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ article.num }}</h1>
+        {# Страница с подробной информацией о палате #}
+        <div class="alert alert-info">
+            <p>{{ article.name1 }}</p>
+            <p>Температура: {{ article.temp1 }}</p>
+            <p>{{ article.about1 }}</p>
+            <p>Дата поступления: {{ article.date1 }}</p><br>
+        </div>
+        <div class="alert alert-info">
+            <p>{{ article.name2 }}</p>
+            <p>Температура: {{ article.temp2 }}</p>
+            <p>{{ article.about2 }}</p>
+            <p>Дата поступления: {{ article.date2 }}</p><br>
+        </div>
+        <div class="alert alert-info">
+            <p>{{ article.name3 }}</p>
+            <p>Температура: {{ article.temp3 }}</p>
+            <p>{{ article.about3 }}</p>
+            <p>Дата поступления: {{ article.date3 }}</p><br>
+        </div>
+        <div class="alert alert-info">
+            <p>{{ article.name4 }}</p>
+            <p>Температура: {{ article.temp4 }}</p>
+            <p>{{ article.about4 }}</p>
+            <p>Дата поступления: {{ article.date4 }}</p><br>
+        </div>
+        <a href="{% url 'rooms-delete' article.id %}" class="btn btn-danger">Удалить палату</a>
+        <a href="{% url 'rooms-update' article.id %}" class="btn btn-warning">Редактировать</a>
+    </div>
+{% endblock %}
